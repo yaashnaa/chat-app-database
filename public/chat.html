@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/4737a162b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ChatConnect App</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <div class="header" data-aos="fade-down">
+          <div class="logo">
+            <div>
+              <i
+                class="fa-brands fa-napster fa-lg"
+                style="
+                  color: #9ee6e6;
+                  background-color: transparent;
+                  padding: 0;
+                "
+              ></i>
+            </div>
+
+            <a href="/"> MusicConnect</a>
+          </div>
+          <div class="search-bar"></div>
+        </div>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <main class="chat-main">
+        <div class="side-bar">
+          <div class="nav-main">
+            <div class="menu">
+              <div class="i">
+                <i class="fa-solid fa-user fa-sm" style="color: #ffffff"></i>
+              </div>
+              <div class="i">
+                <i class="fa-solid fa-message fa-sm" style="color: #ffffff"></i>
+              </div>
+              <div id="new-room">
+                <i class="fa-solid fa-plus fa-sm" style="color: #ffffff"></i>
+              </div>
+              <div class="i">
+                <i
+                  class="fa-solid fa-magnifying-glass fa-sm"
+                  style="color: #ffffff"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-sidebar" data-aos="fade-right">
+          <div class="wrap">
+            <div class="search">
+              <input type="text" class="searchTerm" placeholder="Search" />
+              <button type="submit" class="searchButton">
+                <i
+                  class="fa fa-search"
+                  style="
+                    background: transparent;
+                    border: none;
+                    border-radius: none;
+                    box-shadow: none;
+                  "
+                ></i>
+              </button>
+            </div>
+          </div>
+          <h3>
+            <i
+              class="fas fa-comments"
+              style="
+                background-color: transparent;
+                box-shadow: none;
+                border: none;
+                margin-right: 0;
+              "
+            ></i>
+            Room Name:
+          </h3>
+          <h2 id="room-name"></h2>
+          <h3>
+            <i
+              class="fas fa-users"
+              style="
+                background-color: transparent;
+                box-shadow: none;
+                border: none;
+                margin-right: 0;
+              "
+            ></i>
+            Users
+          </h3>
+          <ul id="users">
+            <i class="fa-regular fa-user fa-sm" style="color: #ffffff"></i>
+          </ul>
+        </div>
+        <div class="cont" data-aos="fade-left" data-aos-duration="1000">
+          <div class="piano">
+            <div id="white-keyset">
+              <div class="white-key" id="c-key"><h1>C</h1></div>
+              <div class="white-key" id="d-key"><h1>D</h1></div>
+              <div class="white-key" id="e-key"><h1>E</h1></div>
+              <div class="white-key" id="f-key"><h1>F</h1></div>
+              <div class="white-key" id="g-key"><h1>G</h1></div>
+              <div class="white-key" id="a-key"><h1>A</h1></div>
+              <div class="white-key" id="b-key"><h1>B</h1></div>
+              <div class="white-key" id="c2-key"><h1>C</h1></div>
+            </div>
+            <div id="black-keyset">
+              <div
+                class="black-key"
+                style="width: 0; border: none; margin-left: 3.6%"
+              ></div>
+              <div class="black-key" id="db-key"><h1>C#/Db</h1></div>
+              <div class="black-key" id="eb-key"><h1>D#/Eb</h1></div>
+              <div
+                class="black-key"
+                style="background-color: rgba(0, 0, 0, 0); border: none"
+              ></div>
+              <div class="black-key" id="gb-key"><h1>F#/Gb</h1></div>
+              <div class="black-key" id="ab-key"><h1>G#/Ab</h1></div>
+              <div class="black-key" id="bb-key"><h1>A#/Bb</h1></div>
+            </div>
+            <div class="button-controls">
+              <div class="hover-text">
+                <button class="button-30-2">Listening mode</button>
+              <div class="tooltip-text" id="bottom">
+                
+                Hint: Turning on listening mode lets you hear other users play!
+              </div>
+              </div>
+              <div class="hover-text">
+                <button class="button-30-2">Playing mode</button>
+                <div class="tooltip-text" id="bottom">
+                  Hint: Turning on playing mode lets other users hear you play!
+                </div>
+              </div>
+            </div>
+          
+           
+          </div>
+
+          <div class="chat-controls">
+            <div class="chat-messages"></div>
+            <div class="chat-form-container">
+              <form id="chat-form">
+                <div class="icons">
+                  <i
+                    class="fa-solid fa-camera fa-xl"
+                    style="
+                      color: #f2a1a1;
+                      background-color: transparent;
+                      box-shadow: none;
+                    "
+                  ></i>
+                  <i
+                    class="fa-regular fa-face-smile fa-xl"
+                    style="
+                      color: #f2a1a1;
+                      background-color: transparent;
+                      box-shadow: none;
+                    "
+                  ></i>
+                </div>
+                <input
+                  id="msg"
+                  type="text"
+                  placeholder="Enter Message"
+                  required
+                  autocomplete="off"
+                />
+                <button class="btn">
+                  <i
+                    class="fas fa-paper-plane"
+                    style="
+                      background-color: transparent;
+                      box-shadow: none;
+                      border: none;
+                    "
+                  ></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
